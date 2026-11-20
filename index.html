@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>E33 – ce que le jury attend de toi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Lexend:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1d2433; --muted:#5b6475; --bg:#f7f6f2; --card:#fff; --line:#e3e1da;
+  --s1:#1f6f8b; --s1-soft:#e4f1f5; --s2:#b4532a; --s2-soft:#fbeee6;
+  --l1:#c0392b; --l2:#d68910; --l3:#2e7dbf; --l4:#1e8449;
+  --radius:14px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;font-family:"Atkinson Hyperlegible",system-ui,sans-serif;font-size:17px;line-height:1.55;color:var(--ink);background:var(--bg)}
+h1,h2,h3,h4{font-family:Lexend,system-ui,sans-serif;line-height:1.2;margin:0 0 .5em}
+h1{font-size:clamp(1.7rem,4.5vw,2.6rem)}
+h2{font-size:clamp(1.4rem,3.2vw,1.9rem);margin-top:.2em}
+h3{font-size:1.2rem}
+h4{font-size:1rem}
+p{margin:.4em 0 .8em}
+ul,ol{padding-left:1.25em;margin:.3em 0 .8em}
+li{margin:.2em 0}
+em.cit{font-style:italic}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+
+/* en-tête */
+header.hero{background:linear-gradient(135deg,#17384a 0%,#1f6f8b 55%,#b4532a 140%);color:#fff;padding:48px 0 40px}
+.hero .kicker{font-family:Lexend,system-ui,sans-serif;font-weight:500;opacity:.85;font-size:.95rem;letter-spacing:.02em}
+.hero p.lead{font-size:1.15rem;max-width:720px;opacity:.95}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.chip{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:99px;font-size:.9rem}
+
+/* navigation */
+nav.top{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+nav.top .wrap{display:flex;gap:4px;overflow-x:auto;padding-top:8px;padding-bottom:8px}
+nav.top a{white-space:nowrap;text-decoration:none;color:var(--ink);padding:7px 12px;border-radius:99px;font-size:.92rem;font-family:Lexend,system-ui,sans-serif;font-weight:500}
+nav.top a:hover{background:#eef0f3}
+nav.top a.s1{color:var(--s1)} nav.top a.s2{color:var(--s2)}
+
+section{padding:44px 0 12px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px 24px;margin:0 0 18px}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+.muted{color:var(--muted)}
+.small{font-size:.9rem}
+
+/* frise des 2 situations */
+.timeline{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:680px){.timeline{grid-template-columns:1fr}}
+.sit{border-radius:var(--radius);padding:20px 22px;border:2px solid}
+.sit.s1{border-color:var(--s1);background:var(--s1-soft)}
+.sit.s2{border-color:var(--s2);background:var(--s2-soft)}
+.sit .tag{display:inline-block;font-family:Lexend,system-ui,sans-serif;font-weight:700;font-size:.8rem;padding:3px 10px;border-radius:99px;color:#fff;margin-bottom:8px}
+.s1 .tag{background:var(--s1)} .s2 .tag{background:var(--s2)}
+.sit dl{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;margin:10px 0 0}
+.sit dt{font-weight:700}
+.sit dd{margin:0}
+.arrow{text-align:center;font-family:Lexend,system-ui,sans-serif;color:var(--muted);margin:10px 0 0}
+
+/* glossaire */
+.gloss{border-left:4px solid var(--s1);padding:10px 14px;background:#fff;border-radius:0 10px 10px 0}
+.gloss b{font-family:Lexend,system-ui,sans-serif;font-weight:700}
+
+/* niveaux */
+.levels4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+@media (max-width:760px){.levels4{grid-template-columns:1fr 1fr}}
+@media (max-width:440px){.levels4{grid-template-columns:1fr}}
+.lv{border-radius:12px;padding:12px 14px;border:1px solid var(--line);background:#fff;position:relative}
+.lv .n{font-family:Lexend,system-ui,sans-serif;font-weight:700;font-size:.85rem;display:flex;align-items:center;gap:6px;margin-bottom:4px}
+.lv .n::before{content:"";width:10px;height:10px;border-radius:50%;background:currentColor}
+.lv.l1 .n{color:var(--l1)} .lv.l2 .n{color:var(--l2)} .lv.l3 .n{color:var(--l3)} .lv.l4 .n{color:var(--l4)}
+.lv.l1{border-top:4px solid var(--l1)} .lv.l2{border-top:4px solid var(--l2)} .lv.l3{border-top:4px solid var(--l3)} .lv.l4{border-top:4px solid var(--l4)}
+.lv.l3::after{content:"objectif minimum";position:absolute;top:-11px;right:10px;font-size:.7rem;background:var(--l3);color:#fff;padding:1px 8px;border-radius:99px;font-family:Lexend}
+.lv.l4::after{content:"vise ici";position:absolute;top:-11px;right:10px;font-size:.7rem;background:var(--l4);color:#fff;padding:1px 8px;border-radius:99px;font-family:Lexend}
+.lv p{margin:0;font-size:.93rem}
+
+/* bandeau de situation */
+.band{border-radius:var(--radius);padding:22px 24px;color:#fff;margin-bottom:22px}
+.band.s1{background:var(--s1)} .band.s2{background:var(--s2)}
+.band h2{color:#fff}
+.band p{opacity:.95;margin:.2em 0}
+.comp{font-family:Lexend,system-ui,sans-serif;font-weight:700;font-size:1.05rem;margin:28px 0 12px;padding:8px 14px;border-radius:10px;display:inline-block}
+.comp.s1{background:var(--s1-soft);color:var(--s1)} .comp.s2{background:var(--s2-soft);color:var(--s2)}
+
+/* critère */
+.crit{background:#fff;border:1px solid var(--line);border-radius:var(--radius);margin:0 0 16px;overflow:hidden}
+.crit > summary{list-style:none;cursor:pointer;padding:16px 20px;display:flex;gap:14px;align-items:flex-start}
+.crit > summary::-webkit-details-marker{display:none}
+.crit .num{flex:0 0 36px;height:36px;border-radius:50%;display:grid;place-items:center;color:#fff;font-family:Lexend,system-ui,sans-serif;font-weight:700}
+.crit.s1 .num{background:var(--s1)} .crit.s2 .num{background:var(--s2)}
+.crit .ttl{flex:1}
+.crit .ttl h3{margin:4px 0 2px}
+.crit .ttl .sub{color:var(--muted);font-size:.93rem}
+.crit .chev{font-size:1.3rem;color:var(--muted);transition:transform .2s;margin-top:4px}
+.crit[open] .chev{transform:rotate(180deg)}
+.crit .body{padding:0 20px 20px 70px}
+@media (max-width:600px){.crit .body{padding:0 16px 18px 16px}}
+.official{background:#f4f3ee;border-radius:10px;padding:10px 14px;font-size:.95rem;margin-bottom:14px}
+.official b{font-family:Lexend,system-ui,sans-serif;font-size:.8rem;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);display:block;margin-bottom:2px}
+.blk{margin:14px 0}
+.blk h4{display:flex;align-items:center;gap:8px}
+.blk h4 .ic{font-size:1.1rem}
+.example{background:#f0f7f1;border-left:4px solid var(--l4);padding:10px 14px;border-radius:0 10px 10px 0}
+.avoid{background:#fdf0ee;border-left:4px solid var(--l1);padding:10px 14px;border-radius:0 10px 10px 0}
+.jury{background:#eef3fb;border-left:4px solid var(--l3);padding:10px 14px;border-radius:0 10px 10px 0}
+.example ul,.avoid ul,.jury ul{margin:.2em 0}
+.lvtitle{font-family:Lexend,system-ui,sans-serif;font-weight:700;font-size:.85rem;color:var(--muted);margin:22px 0 14px;text-transform:uppercase;letter-spacing:.04em}
+
+/* plan diaporama */
+.slides{counter-reset:sl;display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:12px;padding:0;list-style:none}
+.slides li{counter-increment:sl;background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px 14px 12px 14px;margin:0;position:relative;aspect-ratio:16/10;display:flex;flex-direction:column}
+.slides li::before{content:counter(sl);font-family:Lexend,system-ui,sans-serif;font-weight:700;font-size:.8rem;color:#fff;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;margin-bottom:6px}
+.slides.s1 li::before{background:var(--s1)} .slides.s2 li::before{background:var(--s2)}
+.slides li b{font-family:Lexend,system-ui,sans-serif;font-size:.95rem}
+.slides li span{font-size:.85rem;color:var(--muted)}
+.slides li i{margin-top:auto;font-style:normal;font-size:.75rem;color:var(--muted)}
+
+/* check-list */
+.tabs{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap}
+.tabs button{font-family:Lexend,system-ui,sans-serif;font-weight:500;border:2px solid var(--line);background:#fff;padding:8px 16px;border-radius:99px;cursor:pointer;font-size:.95rem;color:var(--ink)}
+.tabs button.on.s1{border-color:var(--s1);background:var(--s1);color:#fff}
+.tabs button.on.s2{border-color:var(--s2);background:var(--s2);color:#fff}
+.progress{height:12px;background:#ebe9e2;border-radius:99px;overflow:hidden;margin:6px 0 4px}
+.progress div{height:100%;width:0;transition:width .3s}
+.checks{list-style:none;padding:0;margin:12px 0 0}
+.checks li{margin:0;border-bottom:1px solid var(--line)}
+.checks label{display:flex;gap:12px;padding:10px 4px;cursor:pointer;align-items:flex-start}
+.checks input{width:20px;height:20px;margin-top:3px;flex:0 0 20px;accent-color:var(--l4)}
+.checks .grp{font-family:Lexend,system-ui,sans-serif;font-weight:700;font-size:.82rem;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;padding:16px 4px 4px;border-bottom:none}
+.btn{font-family:Lexend,system-ui,sans-serif;font-weight:500;border:1px solid var(--line);background:#fff;padding:8px 14px;border-radius:10px;cursor:pointer;font-size:.9rem;color:var(--ink)}
+.btn:hover{background:#f1f0eb}
+.confirm{display:none;gap:8px;align-items:center;margin-top:10px;flex-wrap:wrap}
+.confirm.show{display:flex}
+
+/* ===== minuteur intégré ===== */
+.tm{--acc:var(--s1);--acc-soft:var(--s1-soft)}
+.tm.m-s2{--acc:var(--s2);--acc-soft:var(--s2-soft)}
+.tm.m-free{--acc:#4b5563;--acc-soft:#eef0f3}
+.tm-modes{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 16px}
+.tm-modes button{font-family:Lexend,system-ui,sans-serif;font-weight:500;font-size:.95rem;padding:8px 16px;border-radius:99px;border:2px solid var(--line);background:#fff;color:var(--ink);cursor:pointer}
+.tm-modes button.on{background:var(--acc);border-color:var(--acc);color:#fff}
+.tm-modes button:disabled{opacity:.45;cursor:not-allowed}
+.tm-grid{display:grid;grid-template-columns:1.55fr 1fr;gap:18px;align-items:start}
+@media (max-width:860px){.tm-grid{grid-template-columns:1fr}}
+.tm .card{margin:0}
+.tm .card + .card{margin-top:18px}
+.tm-free{display:none;gap:14px;flex-wrap:wrap;margin-bottom:14px}
+.tm.m-free .tm-free{display:flex}
+.tm-free label{font-size:.9rem;color:var(--muted)}
+.tm-free input{width:80px;font:inherit;padding:6px 10px;border:1px solid var(--line);border-radius:8px;margin-left:6px}
+.tm-phases{display:flex;gap:6px;margin-bottom:14px}
+.tm-ph{flex:1;text-align:center;padding:8px 6px;border-radius:10px;background:#f1f0eb;color:var(--muted);font-family:Lexend,system-ui,sans-serif;font-weight:500;font-size:.9rem}
+.tm-ph.on{background:var(--acc);color:#fff}
+.tm-ph.done{background:var(--acc-soft);color:var(--acc)}
+.tm-clockbox{text-align:center;padding:10px 0 6px}
+.tm-clock{font-family:Lexend,system-ui,sans-serif;font-weight:700;font-size:clamp(4rem,12vw,7.5rem);line-height:1;font-variant-numeric:tabular-nums;letter-spacing:-.02em;transition:color .3s}
+.tm-clock.warn{color:var(--l2)} .tm-clock.last,.tm-clock.over{color:var(--l1)}
+.tm-sub{color:var(--muted);margin-top:6px;min-height:1.5em}
+.tm-over{display:none;background:var(--l1);color:#fff;font-family:Lexend,system-ui,sans-serif;font-size:.85rem;padding:3px 12px;border-radius:99px;margin-top:6px}
+.tm-over.show{display:inline-block}
+.tm-bar{position:relative;height:18px;background:#ebe9e2;border-radius:99px;margin:18px 0 26px}
+.tm-fill{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--acc);border-radius:99px;transition:width .25s linear}
+.tm-tick{position:absolute;top:-4px;bottom:-4px;width:2px;background:#fff;box-shadow:0 0 0 1px rgba(0,0,0,.08)}
+.tm-tick span{position:absolute;top:24px;left:50%;transform:translateX(-50%);font-size:.7rem;color:var(--muted);white-space:nowrap}
+.tm-where{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:520px){.tm-where{grid-template-columns:1fr}}
+.tm-where div{background:#f7f6f2;border-radius:12px;padding:10px 14px}
+.tm-where small{display:block;color:var(--muted);font-size:.8rem;font-family:Lexend,system-ui,sans-serif;text-transform:uppercase;letter-spacing:.04em}
+.tm-where b{font-family:Lexend,system-ui,sans-serif;font-size:1.1rem}
+.tm-status{display:inline-block;margin-top:12px;padding:5px 14px;border-radius:99px;font-family:Lexend,system-ui,sans-serif;font-weight:500;font-size:.9rem;background:#f1f0eb;color:var(--muted)}
+.tm-status.ok{background:#e6f4ea;color:var(--l4)} .tm-status.late{background:#fdecea;color:var(--l1)} .tm-status.early{background:#fff4e0;color:#9a6200}
+.tm-ctrl{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.tm .btn{padding:10px 16px;font-size:.95rem}
+.tm .btn.main{background:var(--acc);border-color:var(--acc);color:#fff;min-width:130px}
+.tm .btn.main:hover{filter:brightness(1.08)}
+.tm .btn:disabled{opacity:.45;cursor:not-allowed}
+.tm-keys{font-size:.82rem;color:var(--muted);margin-top:10px}
+.tm kbd{font-family:Lexend,system-ui,sans-serif;font-size:.75rem;border:1px solid var(--line);border-bottom-width:2px;border-radius:5px;padding:1px 6px;background:#fff}
+.tm-q{display:none;margin-top:18px;border-left:5px solid var(--acc);background:var(--acc-soft);border-radius:0 12px 12px 0;padding:14px 18px}
+.tm-q.show{display:block}
+.tm-q small{font-family:Lexend,system-ui,sans-serif;color:var(--acc);font-weight:700;text-transform:uppercase;font-size:.78rem;letter-spacing:.04em}
+.tm-q p{font-size:1.25rem;margin:6px 0 10px;font-style:italic}
+.tm-parts{list-style:none;padding:0;margin:0}
+.tm-parts li{display:grid;grid-template-columns:26px 1fr auto auto;gap:8px;align-items:center;padding:8px 6px;border-bottom:1px solid var(--line);font-size:.95rem;margin:0}
+.tm-parts li:last-child{border-bottom:none}
+.tm-parts .n{width:24px;height:24px;border-radius:50%;background:#f1f0eb;color:var(--muted);display:grid;place-items:center;font-family:Lexend,system-ui,sans-serif;font-size:.75rem;font-weight:700}
+.tm-parts li.cur{background:var(--acc-soft);border-radius:10px}
+.tm-parts li.cur .n{background:var(--acc);color:#fff}
+.tm-parts li.done .n{background:var(--l4);color:#fff}
+.tm-parts .plan{color:var(--muted);font-variant-numeric:tabular-nums;font-size:.85rem}
+.tm-parts .real{font-variant-numeric:tabular-nums;font-family:Lexend,system-ui,sans-serif;font-size:.85rem;min-width:52px;text-align:right}
+.real.plus{color:var(--l1)} .real.minus{color:#9a6200} .real.good{color:var(--l4)}
+.tm-head{display:grid;grid-template-columns:26px 1fr auto auto;gap:8px;font-size:.75rem;color:var(--muted);text-transform:uppercase;font-family:Lexend,system-ui,sans-serif;padding:0 6px 6px;letter-spacing:.04em}
+.tm-bilan{display:none}
+.tm-bilan.show{display:block}
+.tm-bilan table{width:100%;border-collapse:collapse;font-size:.92rem;margin:8px 0 12px}
+.tm-bilan th,.tm-bilan td{text-align:left;padding:6px 8px;border-bottom:1px solid var(--line)}
+.tm-bilan th{font-family:Lexend,system-ui,sans-serif;font-size:.78rem;text-transform:uppercase;color:var(--muted);letter-spacing:.03em}
+.tm-bilan .num{text-align:right;font-variant-numeric:tabular-nums}
+.tm-verdict{padding:10px 14px;border-radius:10px;margin:6px 0 10px;font-weight:700}
+.tm-verdict.ok{background:#e6f4ea;color:var(--l4)} .tm-verdict.bad{background:#fdecea;color:var(--l1)} .tm-verdict.mid{background:#fff4e0;color:#9a6200}
+.tm-hist{list-style:none;padding:0;margin:0;font-size:.9rem}
+.tm-hist li{display:flex;justify-content:space-between;gap:8px;padding:6px 0;border-bottom:1px solid var(--line);margin:0}
+.tm-hist li:last-child{border-bottom:none}
+.tm-toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(20px);background:var(--ink);color:#fff;padding:10px 18px;border-radius:10px;opacity:0;transition:.25s;pointer-events:none;font-size:.95rem;z-index:200}
+.tm-toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.tm.fs{position:fixed;inset:0;z-index:150;background:var(--bg);overflow:auto;padding:24px}
+.tm.fs .tm-grid{grid-template-columns:1fr;min-height:calc(100vh - 48px);align-content:center;max-width:1000px;margin:0 auto}
+.tm.fs .tm-aside,.tm.fs .tm-hidefs,.tm.fs .tm-modes,.tm.fs .tm-intro{display:none}
+.tm.fs .tm-clock{font-size:clamp(6rem,22vw,16rem)}
+@media print{.tm{display:none}}
+
+footer{padding:30px 0 50px;color:var(--muted);font-size:.88rem;text-align:center}
+@media print{nav.top,.timer,.tabs,.btn{display:none}.crit .body{display:block}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="kicker">Terminale bac pro MCV – sous-épreuve E33</div>
+    <h1>Fidélisation et relation client : ce que le jury attend de toi</h1>
+    <p class="lead">Deux oraux, deux grilles. Pour chaque critère, tu trouves ici ce qu'il veut dire, ce que tu dois montrer, un exemple et les pièges à éviter.</p>
+    <div class="chips">
+      <span class="chip">Coefficient 3</span>
+      <span class="chip">2 situations en CCF</span>
+      <span class="chip">20 min chacune</span>
+      <span class="chip">Support numérique obligatoire</span>
+    </div>
+  </div>
+</header>
+
+<nav class="top">
+  <div class="wrap">
+    <a href="#epreuve">L'épreuve</a>
+    <a href="#mots">Les mots clés</a>
+    <a href="#niveaux">Les 4 niveaux</a>
+    <a href="#se1" class="s1">Situation 1</a>
+    <a href="#se2" class="s2">Situation 2</a>
+    <a href="#diapos">Mon diaporama</a>
+    <a href="#oral">Le jour J</a>
+    <a href="#minuteur">Minuteur</a>
+    <a href="#checklist">Je suis prêt(e) ?</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+<!-- ========== L'ÉPREUVE ========== -->
+<section id="epreuve">
+  <h2>L'épreuve en deux temps</h2>
+  <p>La E33 suit une même action de fidélisation de la clientèle et/ou de développement de la relation client (FDRC) dans ton entreprise de PFMP. D'abord tu analyses et tu proposes, ensuite tu réalises et tu fais le bilan.</p>
+  <div class="timeline">
+    <div class="sit s1">
+      <span class="tag">Situation 1</span>
+      <h3>Phase préparatoire</h3>
+      <p>Tu analyses la fidélisation dans ton entreprise et tu proposes <b>deux actions</b> de FDRC.</p>
+      <dl>
+        <dt>Quand</dt><dd>Pendant la 1<sup>re</sup> PFMP de terminale (décembre 2026)</dd>
+        <dt>Où</dt><dd>Dans ton entreprise d'accueil</dd>
+        <dt>Durée</dt><dd>10 min de présentation + 10 min d'entretien</dd>
+        <dt>Jury</dt><dd>Ton tuteur + un professeur d'économie-gestion</dd>
+        <dt>Critères</dt><dd>4</dd>
+      </dl>
+    </div>
+    <div class="sit s2">
+      <span class="tag">Situation 2</span>
+      <h3>Mise en œuvre de l'action</h3>
+      <p>Tu présentes comment l'action retenue a été <b>réalisée</b> et tu en fais le <b>bilan</b>.</p>
+      <dl>
+        <dt>Quand</dt><dd>Pendant ou à la fin de la dernière PFMP</dd>
+        <dt>Où</dt><dd>En entreprise ou au lycée</dd>
+        <dt>Durée</dt><dd>10 min de présentation (sans interruption) + 10 min d'entretien</dd>
+        <dt>Jury</dt><dd>Ton tuteur + un professeur d'économie-gestion</dd>
+        <dt>Critères</dt><dd>7</dd>
+      </dl>
+    </div>
+  </div>
+  <p class="arrow">Entre les deux : à la fin de la situation 1, le jury choisit l'une de tes deux actions et te remet une <b>feuille de route</b>. C'est cette action que tu mets en œuvre pour la situation 2.</p>
+  <div class="card" style="margin-top:18px">
+    <h3>À retenir</h3>
+    <ul>
+      <li>Les deux oraux s'appuient sur une <b>présentation numérique</b> que tu as préparée (diaporama, Canva, Genially…). Elle doit être terminée le jour de l'oral.</li>
+      <li>Chaque situation est notée sur 20. La note n'est pas communiquée le jour même.</li>
+      <li>Pour chaque critère, le jury te place sur un niveau de 1 (novice) à 4 (expert).</li>
+      <li>Tout doit venir de <b>ton</b> entreprise et de <b>ton</b> expérience : des faits, des chiffres, des exemples vécus.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ========== MOTS CLÉS ========== -->
+<section id="mots">
+  <h2>Les mots clés à maîtriser</h2>
+  <p>Ces mots reviennent dans les grilles. Le jury attend que tu les utilises correctement.</p>
+  <div class="grid2">
+    <div class="gloss"><b>FDRC</b><br>Fidélisation de la clientèle et développement de la relation client. Tout ce qui fait revenir le client et renforce le lien avec lui.</div>
+    <div class="gloss"><b>Action de FDRC</b><br>Une opération ponctuelle pour fidéliser : soirée clients, atelier, vente privée, campagne de relance, jeu concours, enquête de satisfaction…</div>
+    <div class="gloss"><b>Outil de FDRC</b><br>Le moyen utilisé : carte de fidélité, bon de réduction, newsletter, SMS, réseaux sociaux, application, cadeau, service après-vente…</div>
+    <div class="gloss"><b>SIC</b><br>Système d'information commercial. L'ensemble des données sur les clients et les ventes : fichier clients, logiciel de caisse, CRM, statistiques.</div>
+    <div class="gloss"><b>Sollicitation client</b><br>Toute demande d'un client : question, réclamation, demande de conseil, en magasin, au téléphone, par mail ou sur les réseaux sociaux.</div>
+    <div class="gloss"><b>Vente au rebond</b><br>Vente supplémentaire réalisée en profitant d'un contact avec le client (un achat, une réclamation, un événement).</div>
+    <div class="gloss"><b>Sources internes / externes</b><br>Internes : les informations de l'entreprise (SIC, tuteur, documents). Externes : celles qui viennent de l'extérieur (avis en ligne, concurrents, études, INSEE).</div>
+    <div class="gloss"><b>Indicateurs quantitatifs / qualitatifs</b><br>Quantitatifs : des chiffres (participants, CA, panier moyen). Qualitatifs : des avis, des impressions, la satisfaction.</div>
+  </div>
+</section>
+
+<!-- ========== NIVEAUX ========== -->
+<section id="niveaux">
+  <h2>Les 4 niveaux du jury</h2>
+  <p>Le jury ne compte pas des points : il te place sur un profil pour chaque critère. Plus tu es précis, concret et capable d'expliquer <b>pourquoi</b>, plus tu montes.</p>
+  <div class="levels4">
+    <div class="lv l1"><div class="n">1. Novice</div><p>Le travail n'est pas fait ou pas présenté.</p></div>
+    <div class="lv l2"><div class="n">2. Débrouillé</div><p>C'est fait, mais de façon partielle, superficielle ou peu adaptée.</p></div>
+    <div class="lv l3"><div class="n">3. Averti</div><p>C'est fait correctement et adapté à ton entreprise.</p></div>
+    <div class="lv l4"><div class="n">4. Expert</div><p>C'est fait correctement, <b>et</b> tu analyses, tu justifies, tu fais des liens.</p></div>
+  </div>
+  <p class="muted small" style="margin-top:12px">Astuce : pour passer d'averti à expert, ajoute presque toujours un <b>« parce que… »</b> ou un <b>« ce qui a permis de… »</b>.</p>
+</section>
+
+<!-- ========== SITUATION 1 ========== -->
+<section id="se1">
+  <div class="band s1">
+    <h2>Situation 1 – phase préparatoire</h2>
+    <p>Tu présentes l'analyse de la fidélisation dans ton entreprise et tu proposes deux actions de FDRC dont tu justifies la pertinence.</p>
+  </div>
+  <div class="comp s1">Compétence évaluée : traiter et exploiter l'information ou le contact client</div>
+  <div id="se1-list"></div>
+</section>
+
+<!-- ========== SITUATION 2 ========== -->
+<section id="se2">
+  <div class="band s2">
+    <h2>Situation 2 – mise en œuvre de l'action</h2>
+    <p>À partir de ta feuille de route, tu présentes comment l'action retenue a été réalisée, ta participation, puis le bilan et les améliorations possibles.</p>
+  </div>
+  <div class="comp s2">Compétence 1 : contribuer à des actions de fidélisation et de développement de la relation client</div>
+  <div id="se2a-list"></div>
+  <div class="comp s2">Compétence 2 : évaluer les actions de fidélisation et de développement de la relation client</div>
+  <div id="se2b-list"></div>
+</section>
+
+<!-- ========== DIAPORAMA ========== -->
+<section id="diapos">
+  <h2>Mon diaporama : une structure possible</h2>
+  <p>Ces plans couvrent tous les critères de la grille. Adapte-les à ton entreprise. Compte environ une minute par diapo.</p>
+  <h3 style="color:var(--s1)">Situation 1 – environ 9 diapos</h3>
+  <ol class="slides s1" id="slides1"></ol>
+  <h3 style="color:var(--s2);margin-top:24px">Situation 2 – environ 11 diapos</h3>
+  <ol class="slides s2" id="slides2"></ol>
+</section>
+
+<!-- ========== LE JOUR J ========== -->
+<section id="oral">
+  <h2>Le jour J</h2>
+  <div class="grid2">
+    <div class="card">
+      <h3>Pendant ta présentation (10 min)</h3>
+      <ul>
+        <li>Annonce ton plan au début.</li>
+        <li>Regarde le jury, pas l'écran. Tes diapos sont un appui, pas un texte à lire.</li>
+        <li>Parle de ce que <b>tu</b> as fait : dis « j'ai », pas seulement « on a ».</li>
+        <li>Cite tes sources et tes chiffres avec précision.</li>
+        <li>Termine par une conclusion courte, sans dépasser le temps.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Pendant l'entretien (10 min)</h3>
+      <ul>
+        <li>Écoute la question jusqu'au bout. Si tu n'as pas compris, reformule : « Vous voulez savoir si… ? »</li>
+        <li>Réponds avec un argument et un exemple vécu.</li>
+        <li>Si tu ne sais pas, dis-le et propose ce que tu ferais pour trouver l'information.</li>
+        <li>Utilise le vocabulaire professionnel : FDRC, SIC, panier moyen, taux de participation, vente au rebond…</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ========== MINUTEUR ========== -->
+<section id="minuteur">
+  <h2>Minuteur d'entraînement</h2>
+  <div class="tm m-s1" id="tm">
+    <p class="tm-intro">Entraîne-toi en conditions réelles : 10 minutes de présentation, puis 10 minutes d'entretien. Les repères t'indiquent où tu devrais en être dans ton diaporama.</p>
+    <div class="tm-modes" id="tm-modes">
+      <button data-m="s1" class="on">Situation 1 – phase préparatoire</button>
+      <button data-m="s2">Situation 2 – mise en œuvre</button>
+      <button data-m="free">Réglage libre</button>
+    </div>
+    <div class="tm-grid">
+      <div>
+        <div class="card">
+          <div class="tm-free">
+            <label>Présentation (min) <input type="number" id="tm-fPres" min="1" max="30" value="10"></label>
+            <label>Entretien (min) <input type="number" id="tm-fEnt" min="0" max="30" value="10"></label>
+          </div>
+          <div class="tm-phases">
+            <div class="tm-ph on" id="tm-ph1">1. Présentation</div>
+            <div class="tm-ph" id="tm-ph2">2. Entretien</div>
+            <div class="tm-ph" id="tm-ph3">Bilan</div>
+          </div>
+          <div class="tm-clockbox">
+            <div class="tm-clock" id="tm-clock">10:00</div>
+            <div class="tm-over" id="tm-over">Temps dépassé</div>
+            <div class="tm-sub" id="tm-sub"></div>
+          </div>
+          <div class="tm-bar" id="tm-bar"><div class="tm-fill" id="tm-fill"></div></div>
+          <div class="tm-hidefs" id="tm-whereBox">
+            <div class="tm-where">
+              <div><small>Tu es sur</small><b id="tm-cur">–</b></div>
+              <div><small>D'après le chrono, tu devrais être sur</small><b id="tm-exp">–</b></div>
+            </div>
+            <span class="tm-status" id="tm-status">En attente</span>
+          </div>
+          <div class="tm-q" id="tm-q">
+            <small>Question possible du jury</small>
+            <p id="tm-qtext"></p>
+            <button class="btn" id="tm-qnext">Autre question</button>
+          </div>
+          <div class="tm-ctrl">
+            <button class="btn main" id="tm-start">Démarrer</button>
+            <button class="btn" id="tm-next">Partie suivante</button>
+            <button class="btn" id="tm-phase">Passer à l'entretien</button>
+            <button class="btn" id="tm-reset">Réinitialiser</button>
+            <button class="btn" id="tm-sound">Son : activé</button>
+            <button class="btn" id="tm-fs">Plein écran</button>
+          </div>
+          <div class="tm-keys tm-hidefs">Raccourcis (quand le minuteur est à l'écran) : <kbd>Espace</kbd> démarrer / pause · <kbd>→</kbd> partie suivante · <kbd>E</kbd> entretien · <kbd>R</kbd> réinitialiser · <kbd>Échap</kbd> quitter le plein écran</div>
+        </div>
+        <div class="card tm-bilan tm-hidefs" id="tm-bilan">
+          <h3>Bilan de ton passage</h3>
+          <div id="tm-verdict"></div>
+          <table>
+            <thead><tr><th>Partie</th><th class="num">Prévu</th><th class="num">Réel</th><th class="num">Écart</th></tr></thead>
+            <tbody id="tm-bilanBody"></tbody>
+          </table>
+          <div id="tm-conseils"></div>
+          <button class="btn" id="tm-copy">Copier le bilan</button>
+        </div>
+      </div>
+      <div class="tm-aside">
+        <div class="card">
+          <h3 id="tm-partsTitle">Le plan conseillé – situation 1</h3>
+          <p class="muted small" style="margin:0 0 10px">Appuie sur « Partie suivante » à chaque changement de partie. Le plan reprend celui de la rubrique « Mon diaporama ».</p>
+          <div class="tm-head"><span></span><span>Partie</span><span>Prévu</span><span style="min-width:52px;text-align:right">Réel</span></div>
+          <ul class="tm-parts" id="tm-parts"></ul>
+        </div>
+        <div class="card">
+          <h3>Mes derniers passages</h3>
+          <ul class="tm-hist" id="tm-hist"></ul>
+          <button class="btn" id="tm-clearHist" style="margin-top:10px">Effacer l'historique</button>
+          <div class="confirm" id="tm-confHist">
+            <span>Effacer tous les passages enregistrés ?</span>
+            <button class="btn" id="tm-yesHist">Oui, effacer</button>
+            <button class="btn" id="tm-noHist">Non</button>
+          </div>
+          <p class="muted small" style="margin:10px 0 0">L'historique reste sur cet ordinateur uniquement.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="tm-toast" id="tm-toast"></div>
+</section>
+
+<!-- ========== CHECK-LIST ========== -->
+<section id="checklist">
+  <h2>Je suis prêt(e) ?</h2>
+  <p>Coche ce que ta présentation contient déjà. Tes cases restent enregistrées sur cet ordinateur.</p>
+  <div class="card">
+    <div class="tabs">
+      <button class="on s1" data-tab="c1">Situation 1</button>
+      <button class="s2" data-tab="c2">Situation 2</button>
+    </div>
+    <div><b id="pctTxt">0 %</b> <span class="muted small">de la liste</span></div>
+    <div class="progress"><div id="pctBar"></div></div>
+    <ul class="checks" id="checks"></ul>
+    <div style="margin-top:14px">
+      <button class="btn" id="clearBtn">Tout décocher</button>
+      <div class="confirm" id="confirm">
+        <span>Décocher toutes les cases de cette situation ?</span>
+        <button class="btn" id="yesClear">Oui, tout décocher</button>
+        <button class="btn" id="noClear">Non</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>Bac pro métiers du commerce et de la vente – E33 fidélisation de la clientèle et développement de la relation client.<br>Page construite à partir des grilles d'évaluation nationales des situations 1 et 2.</footer>
+
+<script>
+/* ---------- contenus des critères ---------- */
+const COMM = {
+  t:"Qualité de la communication orale et écrite",
+  ind:"Qualité de l'écoute active, de l'argumentation et du vocabulaire professionnel, attractivité du support numérique et structuration de la présentation",
+  sens:"Le jury évalue ta façon de présenter (oral et support) et ta façon de répondre pendant l'entretien. Ce critère est présent dans les deux situations.",
+  show:[
+    "Un support numérique clair : peu de texte, des titres, des chiffres mis en valeur (tableau, graphique), des photos de ton entreprise si elles sont autorisées.",
+    "Un plan annoncé et suivi, avec une introduction et une conclusion.",
+    "Le respect des 10 minutes.",
+    "Un vocabulaire professionnel juste.",
+    "Pendant l'entretien : tu écoutes, tu reformules si besoin, tu argumentes avec des exemples."
+  ],
+  ex:["« Pour mesurer la fidélité, j'ai regardé le taux de réachat des porteurs de carte : il est de 42 % sur les six derniers mois. »"],
+  jury:["« Pouvez-vous préciser ce que vous entendez par… ? »","« Pourquoi avez-vous choisi de présenter ce chiffre ? »"],
+  avoid:["Lire ses diapos ou ses notes.","Des diapos surchargées de texte.","Dépasser le temps ou finir en 4 minutes.","Arriver sans support numérique : c'est le niveau novice."],
+  lv:["Communique avec difficulté et ne présente pas de support numérique.","Ne communique pas clairement. Utilise un support numérique peu adapté.","Communique clairement, utilise un support numérique adapté.","Réalise une communication structurée et professionnelle en utilisant un support numérique attractif."]
+};
+
+const SE1 = [
+{
+  t:"Pertinence du choix des sources d'information, des données recueillies et remontées",
+  ind:"Clarté des informations collectées, mobilisation des données internes (SIC) et externes, fiabilité, récence, utilité des sources sélectionnées",
+  sens:"Pour analyser la fidélisation dans ton entreprise, tu dois aller chercher des informations au bon endroit, vérifier qu'elles sont fiables et récentes, et les transmettre (remonter) à ton tuteur ou ton responsable.",
+  show:[
+    "Des <b>sources internes</b> : SIC, logiciel de caisse, fichier clients, chiffres de la carte de fidélité, entretien avec ton tuteur, documents de l'enseigne.",
+    "Des <b>sources externes</b> : avis Google, réseaux sociaux de l'enseigne, sites des concurrents, articles ou études sur le secteur.",
+    "Des données <b>quantitatives</b> (nombre de clients fidélisés, taux de réachat, panier moyen) et <b>qualitatives</b> (avis, attentes des clients).",
+    "Pour chaque information : la source et la date.",
+    "À qui tu as transmis les informations recueillies, et ce qu'elles ont permis de décider."
+  ],
+  ex:["« Le magasin compte 4 200 porteurs de la carte (logiciel de caisse, octobre 2026). 38 % n'ont rien acheté depuis six mois. J'ai transmis ce chiffre à ma tutrice : il montre qu'il faut relancer ces clients. »"],
+  jury:["« D'où vient ce chiffre ? Il date de quand ? »","« Comment avez-vous eu accès au fichier clients ? »","« À qui avez-vous transmis ces informations ? »"],
+  avoid:["Des chiffres sans source ou trop anciens.","Recopier le site national de l'enseigne sans lien avec ton point de vente.","N'utiliser que des sources externes (ou que des internes)."],
+  lv:["Ne mobilise pas les sources d'information nécessaires pour recueillir et remonter des données.","Mobilise des sources d'information permettant de recueillir et de remonter des données partielles.","Mobilise des sources internes et externes significatives permettant de recueillir et de remonter des données quantitatives et qualitatives exploitables.","Mobilise des sources internes et externes significatives permettant de recueillir et de remonter des données quantitatives et qualitatives utiles dans le cadre de la FDRC."]
+},
+{
+  t:"Qualité du traitement des sollicitations clients",
+  ind:"Capacité à expliciter sa contribution à la FDRC dans les actions du quotidien, appréciation de l'efficacité de sa pratique",
+  sens:"Au quotidien, tu réponds à des clients qui te sollicitent. Le jury veut savoir comment tu le fais, en quoi cela participe à la fidélisation, et si tu as un regard critique sur ta pratique.",
+  show:[
+    "Deux ou trois situations <b>réelles</b> que tu as vécues : en face à face, au téléphone, par mail ou sur les réseaux sociaux.",
+    "Pour chacune : la demande du client, ce que tu as fait, le résultat.",
+    "En quoi ta réponse a fidélisé le client (il est revenu, il a pris la carte, il a laissé un avis positif…).",
+    "Ton avis sur ta pratique : ce qui a bien marché, ce que tu ferais autrement."
+  ],
+  ex:["« Une cliente est revenue avec des chaussures décollées. J'ai vérifié la garantie, proposé un échange immédiat et lui ai présenté la carte de fidélité. Elle l'a prise et elle est revenue deux semaines plus tard. Avec le recul, j'aurais dû noter sa réclamation dans le logiciel pour le suivi. »"],
+  jury:["« Comment gérez-vous un client mécontent ? »","« En quoi cette réponse fidélise-t-elle le client ? »","« Que feriez-vous différemment aujourd'hui ? »"],
+  avoid:["Rester général : « j'accueille bien les clients ».","Décrire la procédure de l'entreprise sans dire ce que tu fais, toi.","Oublier de faire le lien avec la fidélisation."],
+  lv:["Ne traite pas les sollicitations clients.","Traite partiellement les sollicitations clients.","Traite correctement les sollicitations clients et en explicite sa contribution.","Traite judicieusement les sollicitations clients, en explicite sa contribution et la justifie."]
+},
+{
+  t:"Pertinence des actions proposées",
+  ind:"Faisabilité des 2 actions de FDRC proposées, cohérence avec le contexte et la stratégie commerciale de l'entreprise",
+  sens:"Ton analyse doit aboutir à deux actions de fidélisation que l'entreprise pourrait vraiment réaliser, et qui répondent à un constat que tu as fait. Le jury en retiendra une pour la situation 2.",
+  show:[
+    "Le <b>constat</b> de départ : le problème ou l'opportunité repéré dans ton analyse.",
+    "Pour chaque action : l'objectif chiffré, la cible, le déroulement, la date, les moyens (humains, matériels, budget).",
+    "Pourquoi elle est <b>faisable</b> : accord du tuteur, coût raisonnable, délai réaliste.",
+    "Pourquoi elle est <b>cohérente</b> avec la stratégie de l'enseigne (positionnement, politique de fidélité, image).",
+    "Comment on mesurera les résultats."
+  ],
+  ex:["Constat : 38 % des porteurs de carte sont inactifs depuis six mois.","Action 1 : campagne SMS de relance avec un bon de 10 € valable un mois. Objectif : 15 % de retour.","Action 2 : soirée privée « running » réservée aux porteurs de la carte, avec un coach. Objectif : 60 participants."],
+  jury:["« Pourquoi ces deux actions plutôt que d'autres ? »","« Combien cela coûterait-il ? Qui validerait ? »","« Comment saurez-vous si l'action a réussi ? »"],
+  avoid:["Des actions irréalisables (budget, autorisations, délais).","Des actions sans lien avec ton analyse.","Une seule action, ou deux actions identiques.","Pas d'objectif chiffré."],
+  lv:["Ne propose pas d'actions de FDRC.","Propose des actions peu adaptées au contexte.","Propose deux actions dont l'une est pertinente au regard du contexte et de la stratégie commerciale.","Propose deux actions pertinentes au regard du contexte et de la stratégie commerciale."]
+},
+COMM
+];
+
+const SE2A = [
+{
+  t:"Cohérence du choix des outils de fidélisation et/ou de développement de la relation client avec le contexte",
+  ind:"Choix et mobilisation d'outils de fidélisation et/ou de développement de la relation client, y compris digitaux, en adéquation avec le contexte et le profil client",
+  sens:"Pour réaliser l'action, tu as utilisé des outils (carte, SMS, réseaux sociaux, bons de réduction…). Le jury veut savoir pourquoi ceux-là, et s'ils conviennent à tes clients.",
+  show:[
+    "La liste des outils utilisés, dont au moins un outil <b>digital</b> si c'est adapté (SMS, e-mailing, réseaux sociaux, application, site).",
+    "Le <b>profil des clients</b> visés : âge, habitudes, canal préféré.",
+    "Pourquoi chaque outil convient à ce profil et à l'entreprise.",
+    "Pour aller plus loin : comment les outils se complètent entre eux."
+  ],
+  ex:["« Notre cible a surtout 25-45 ans et suit la page Instagram du magasin. J'ai utilisé le SMS pour inviter les porteurs de carte, Instagram pour toucher les autres clients, et l'inscription à la carte sur place pour récupérer de nouveaux contacts. Les trois outils se complètent. »"],
+  jury:["« Pourquoi le SMS plutôt que le mail ? »","« Cet outil convient-il à tous vos clients ? »"],
+  avoid:["Citer des outils sans expliquer le choix.","Des outils qui ne correspondent pas à la clientèle (ex. : uniquement TikTok pour une clientèle âgée)."],
+  lv:["Ne sélectionne pas d'outils de FDRC.","Sélectionne des outils de FDRC en cohérence partielle avec le contexte.","Sélectionne des outils de FDRC cohérents avec le contexte et le profil client.","Sélectionne des outils de FDRC cohérents avec le contexte et le profil client en analysant leur complémentarité."]
+},
+{
+  t:"Qualité de la contribution à l'opération de FDRC",
+  ind:"Description et compréhension de la finalité du processus, participation à l'organisation de l'évènement et/ou de l'opération",
+  sens:"Le jury veut savoir ce que tu as réellement fait, et si tu as compris à quoi servait l'action.",
+  show:[
+    "Le rappel de la feuille de route et de l'objectif de l'action.",
+    "Les étapes de l'action : avant (préparation), pendant (le jour J), après (suivi).",
+    "Un planning (rétroplanning) avec les dates.",
+    "<b>Ta</b> part du travail à chaque étape, et avec qui tu as travaillé.",
+    "Pour aller plus loin : ce que ton implication a changé dans le résultat."
+  ],
+  ex:["« J'ai rédigé le SMS d'invitation et je l'ai fait valider par ma tutrice. J'ai installé l'espace d'accueil, tenu la table d'inscription et relancé par téléphone les 20 clients qui n'avaient pas répondu : 9 sont venus. »"],
+  jury:["« Quelle a été votre tâche principale ? »","« Quel était le but final de cette opération ? »","« Qu'avez-vous fait seul(e), et avec l'aide de qui ? »"],
+  avoid:["Dire seulement « nous avons fait » sans préciser ta part.","Raconter le jour J sans parler de la préparation ni du suivi.","Oublier l'objectif de départ."],
+  lv:["N'évoque pas sa contribution à l'action.","Décrit superficiellement sa contribution à l'action.","Décrit correctement sa contribution à l'action.","Analyse sa contribution en explicitant son implication dans le processus."]
+},
+{
+  t:"Opportunité de la proposition de ventes au rebond",
+  ind:"Repérage de situations commerciales favorables induites par l'évènement ou l'opération en face à face ou à distance",
+  sens:"Une action de fidélisation crée des contacts avec les clients. Le jury veut voir que tu as profité de ces contacts pour vendre davantage : produit complémentaire, service, montée en gamme.",
+  show:[
+    "Les situations favorables que tu as repérées pendant l'action, en magasin ou à distance (téléphone, mail).",
+    "Ce que tu as proposé et pourquoi c'était adapté au client.",
+    "Le résultat : nombre de ventes au rebond, montant.",
+    "Pour aller plus loin : ce que tu avais préparé à l'avance pour <b>provoquer</b> ces ventes."
+  ],
+  ex:["« Les clients venaient utiliser leur bon de 10 € sur des chaussures de running. Je proposais les chaussettes techniques et le spray imperméabilisant, que j'avais placés près de la caisse. Résultat : 14 ventes au rebond, pour 186 € de CA. »"],
+  jury:["« Avez-vous réalisé des ventes supplémentaires pendant l'opération ? »","« Comment aviez-vous repéré ces occasions ? »"],
+  avoid:["Ne pas en parler du tout.","Confondre avec la vente de départ.","Pas de chiffre pour mesurer le résultat."],
+  lv:["Ne cherche pas à repérer les opportunités commerciales de ventes au rebond.","Perçoit partiellement les opportunités commerciales de ventes au rebond.","Repère les principales opportunités commerciales de ventes au rebond.","Repère et provoque les opportunités commerciales de ventes au rebond."]
+},
+{
+  t:"Justesse de l'enrichissement et de l'actualisation du SIC",
+  ind:"Transmission des données collectées au bon interlocuteur, pertinence de l'actualisation et de l'enrichissement des fichiers",
+  sens:"L'action t'a permis de recueillir des informations sur les clients. Tu dois montrer que tu les as enregistrées ou transmises pour mettre à jour (actualiser) et compléter (enrichir) le fichier clients.",
+  show:[
+    "Les données collectées : nouveaux clients, coordonnées mises à jour, centres d'intérêt, avis, consentement pour recevoir des offres.",
+    "Comment tu les as collectées (fiche d'inscription, logiciel, questionnaire).",
+    "Où elles ont été enregistrées et à qui tu les as transmises.",
+    "Pourquoi ces données seront utiles pour l'entreprise.",
+    "Pour aller plus loin : tu as alimenté le SIC <b>avant, pendant et après</b> l'action."
+  ],
+  ex:["« Pendant la soirée, 23 nouvelles cartes ont été créées. J'ai saisi les fiches dans le logiciel le lendemain, corrigé 11 numéros de téléphone erronés, et ajouté le centre d'intérêt « trail » pour 17 clients. J'ai envoyé le récapitulatif au responsable. »"],
+  jury:["« Quelles informations avez-vous ajoutées au fichier clients ? »","« À quoi serviront-elles ? »","« Le client a-t-il donné son accord pour recevoir des offres ? »"],
+  avoid:["Collecter des informations sans dire ce qu'elles deviennent.","Oublier le consentement du client."],
+  lv:["N'enrichit pas le SIC.","Préconise un enrichissement sommaire du SIC.","Préconise ou réalise un enrichissement adapté du SIC.","Préconise ou réalise un enrichissement adapté et continu du SIC tout au long de l'action de FDRC."]
+}
+];
+
+const SE2B = [
+{
+  t:"Pertinence de l'analyse des résultats",
+  ind:"Analyse des performances commerciales : indicateurs quantitatifs et qualitatifs, analyse des difficultés rencontrées et surmontées, analyse des acquis",
+  sens:"Tu fais le bilan de l'action : a-t-elle atteint ses objectifs ? Le jury attend un bilan commercial (chiffres et avis) et un bilan personnel (ce que tu as appris).",
+  show:[
+    "Des indicateurs <b>quantitatifs</b> : participants, taux de participation, CA, panier moyen, nouvelles cartes, ventes au rebond.",
+    "Des indicateurs <b>qualitatifs</b> : satisfaction des clients, avis, retour du tuteur.",
+    "La comparaison <b>objectif / réalisé</b>, avec un taux d'atteinte.",
+    "Les difficultés rencontrées et comment tu les as surmontées.",
+    "Tes acquis : les compétences que tu as développées."
+  ],
+  ex:["Objectif : 60 participants. Réalisé : 48. Taux d'atteinte : 48 ÷ 60 × 100 = 80 %.","« La difficulté : peu de réponses à l'invitation. J'ai relancé par téléphone et 9 clients de plus sont venus. J'ai appris à organiser un événement et à argumenter au téléphone. »"],
+  jury:["« L'action est-elle une réussite ? Pourquoi ? »","« Quel indicateur vous semble le plus parlant ? »","« Qu'avez-vous appris ? »"],
+  avoid:["Des résultats sans objectif de départ : on ne peut pas juger.","Seulement des chiffres, ou seulement des impressions.","Oublier le bilan personnel."],
+  lv:["Ne présente ni bilan des acquis ni bilan commercial.","Présente un bilan partiel des acquis et des résultats de l'action de FDRC.","Présente un bilan adapté des acquis et des résultats de l'action de FDRC.","Présente une analyse des acquis et des résultats de l'action de FDRC en utilisant des indicateurs pertinents."]
+},
+{
+  t:"Intérêt des propositions d'amélioration",
+  ind:"Adéquation des préconisations de remédiation avec le bilan de l'action de FDRC et l'orientation commerciale de l'entreprise",
+  sens:"À partir de ton bilan, tu proposes ce qu'il faudrait changer si l'action était refaite. Chaque proposition doit répondre à un point faible et rester cohérente avec la stratégie de l'entreprise.",
+  show:[
+    "Pour chaque point faible du bilan : une amélioration précise.",
+    "Comment cette amélioration serait mise en place.",
+    "Le lien avec la stratégie de l'enseigne.",
+    "Pour aller plus loin : le résultat attendu de chaque amélioration."
+  ],
+  ex:["« Les 18-25 ans sont peu venus (6 sur 48). L'enseigne veut rajeunir sa clientèle : la prochaine fois, je propose de relayer l'invitation sur Instagram avec un jeu concours. »"],
+  jury:["« Si c'était à refaire, que changeriez-vous ? »","« Cette amélioration est-elle réaliste pour le magasin ? »"],
+  avoid:["Des améliorations sans lien avec le bilan.","Des propositions vagues : « mieux communiquer ».","Des idées contraires à la politique de l'enseigne."],
+  lv:["Ne préconise pas d'améliorations au regard du bilan de l'action de FDRC.","Préconise des améliorations inadaptées au regard du bilan de l'action de FDRC.","Préconise des améliorations adaptées au regard du bilan de l'action de FDRC.","Préconise des améliorations pertinentes au regard du bilan de l'action de FDRC et de l'orientation commerciale de l'entreprise."]
+},
+COMM
+];
+
+const LVN = ["1. Novice","2. Débrouillé","3. Averti","4. Expert"];
+function list(a){return "<ul>"+a.map(x=>"<li>"+x+"</li>").join("")+"</ul>";}
+function render(id,arr,cls,start){
+  const el=document.getElementById(id);
+  el.innerHTML=arr.map((c,i)=>`
+  <details class="crit ${cls}" ${i===0&&start===1?"open":""}>
+    <summary>
+      <span class="num">${start+i}</span>
+      <span class="ttl"><h3>${c.t}</h3><span class="sub">${c.sens}</span></span>
+      <span class="chev">▾</span>
+    </summary>
+    <div class="body">
+      <div class="official"><b>Ce que dit la grille</b><em class="cit">« ${c.ind} »</em></div>
+      <div class="blk"><h4><span class="ic">✅</span>Ce que tu dois montrer</h4>${list(c.show)}</div>
+      <div class="grid2">
+        <div class="example"><h4>Exemple dans un magasin de sport</h4>${c.ex.length>1?list(c.ex):"<p>"+c.ex[0]+"</p>"}</div>
+        <div class="jury"><h4>Le jury peut te demander</h4>${list(c.jury)}</div>
+      </div>
+      <div class="avoid blk"><h4>À éviter</h4>${list(c.avoid)}</div>
+      <div class="lvtitle">Les 4 niveaux pour ce critère</div>
+      <div class="levels4">${c.lv.map((d,k)=>`<div class="lv l${k+1}"><div class="n">${LVN[k]}</div><p>${d}</p></div>`).join("")}</div>
+    </div>
+  </details>`).join("");
+}
+render("se1-list",SE1,"s1",1);
+render("se2a-list",SE2A,"s2",1);
+render("se2b-list",SE2B,"s2",5);
+
+/* ---------- plans de diaporama ---------- */
+const S1=[
+ ["Titre","Ton nom, l'entreprise, la date","–"],
+ ["L'entreprise","Enseigne, activité, offre, clientèle, concurrents","Sources"],
+ ["Mes sources","Internes et externes, avec les dates","Sources"],
+ ["La fidélisation existante","Outils et actions déjà en place, chiffres clés","Sources"],
+ ["Mon rôle au quotidien","2 ou 3 sollicitations clients traitées","Sollicitations"],
+ ["Mes constats","Points forts et points à améliorer","Actions"],
+ ["Action 1","Objectif, cible, déroulement, moyens, mesure","Actions"],
+ ["Action 2","Objectif, cible, déroulement, moyens, mesure","Actions"],
+ ["Conclusion","Pourquoi ces actions sont utiles à l'entreprise","Communication"]
+];
+const S2=[
+ ["Titre","Ton nom, l'entreprise, l'action retenue","–"],
+ ["Rappel","Contexte et feuille de route, objectif chiffré","Contribution"],
+ ["Les outils choisis","Quels outils, pour quel profil client","Outils"],
+ ["Préparation","Rétroplanning et tâches réalisées","Contribution"],
+ ["Le jour J","Déroulement et ton rôle","Contribution"],
+ ["Ventes au rebond","Situations repérées, résultats","Rebond"],
+ ["Le SIC","Données collectées, saisies, transmises","SIC"],
+ ["Bilan commercial","Objectif / réalisé, indicateurs","Résultats"],
+ ["Bilan personnel","Difficultés surmontées, acquis","Résultats"],
+ ["Améliorations","Une proposition par point faible","Amélioration"],
+ ["Conclusion","Ce que l'action a apporté à l'entreprise","Communication"]
+];
+function slides(id,a){document.getElementById(id).innerHTML=a.map(s=>`<li><b>${s[0]}</b><span>${s[1]}</span><i>Critère : ${s[2]}</i></li>`).join("");}
+slides("slides1",S1); slides("slides2",S2);
+
+/* ---------- minuteur intégré ---------- */
+(function(){
+const fr=s=>String(s).replace(/ ([:;?!%€»])/g," $1").replace(/« /g,"« ");
+const $=id=>document.getElementById("tm-"+id);
+const root=document.getElementById("tm");
+const PLANS={
+  s1:{name:"situation 1",pres:600,ent:600,parts:[
+    ["Introduction",30],["L'entreprise",90],["Mes sources",60],["La fidélisation existante",90],
+    ["Mon rôle au quotidien",90],["Mes constats",60],["Action 1",75],["Action 2",75],["Conclusion",30]],
+    q:["D'où vient ce chiffre ? Il date de quand ?","À qui avez-vous transmis ces informations ?","Comment gérez-vous un client mécontent ?",
+       "En quoi votre réponse a-t-elle fidélisé ce client ?","Que feriez-vous différemment aujourd'hui ?","Pourquoi ces deux actions plutôt que d'autres ?",
+       "Combien coûterait votre action ? Qui la validerait ?","Comment saurez-vous si l'action a réussi ?","Quelle action préférez-vous, et pourquoi ?",
+       "Quels sont les concurrents de votre magasin ?","Quels outils de fidélisation existent déjà dans l'entreprise ?","Votre action est-elle cohérente avec la politique de l'enseigne ?"]},
+  s2:{name:"situation 2",pres:600,ent:600,parts:[
+    ["Introduction",30],["Rappel de la feuille de route",45],["Les outils choisis",60],["La préparation",60],["Le jour J",60],
+    ["Ventes au rebond",45],["Enrichissement du SIC",45],["Bilan commercial",75],["Bilan personnel",60],["Améliorations",75],["Conclusion",45]],
+    q:["Pourquoi le SMS plutôt que le mail ?","Ces outils conviennent-ils à tous vos clients ?","Quelle a été votre tâche principale ?",
+       "Qu'avez-vous fait seul(e), et avec l'aide de qui ?","Quel était le but final de cette opération ?","Avez-vous réalisé des ventes supplémentaires pendant l'opération ?",
+       "Comment aviez-vous repéré ces occasions de vente ?","Quelles informations avez-vous ajoutées au fichier clients ?","Le client a-t-il donné son accord pour recevoir des offres ?",
+       "L'action est-elle une réussite ? Pourquoi ?","Quel indicateur vous semble le plus parlant ?","Qu'avez-vous appris ?","Si c'était à refaire, que changeriez-vous ?",
+       "Cette amélioration est-elle réaliste pour le magasin ?"]},
+  free:{name:"réglage libre",pres:600,ent:600,parts:[],q:[]}
+};
+let mode="s1",plan=PLANS.s1,phase="pres",running=false,startAt=0,acc=0,tick=null;
+let partIdx=0,partStart=0,laps=[],presTotal=0,entTotal=0,sound=true,alerted={},qOrder=[],qi=0,actx=null;
+const fmt=s=>{const neg=s<0;s=Math.abs(Math.round(s));return (neg?"+":"")+Math.floor(s/60)+":"+String(s%60).padStart(2,"0");};
+const elapsed=()=>(acc+(running?Date.now()-startAt:0))/1000;
+const dur=()=>phase==="pres"?plan.pres:plan.ent;
+const cum=i=>{let s=0;for(let k=0;k<i;k++)s+=plan.parts[k][1];return s;};
+function beep(n,f){if(!sound)return;try{actx=actx||new (window.AudioContext||window.webkitAudioContext)();
+  for(let i=0;i<n;i++){const o=actx.createOscillator(),g=actx.createGain(),t=actx.currentTime+i*.28;o.frequency.value=f;o.connect(g);g.connect(actx.destination);
+  g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(.25,t+.02);g.gain.exponentialRampToValueAtTime(.0001,t+.22);o.start(t);o.stop(t+.24);}}catch(e){}}
+function toast(m){const t=$("toast");t.textContent=fr(m);t.classList.add("show");clearTimeout(t._h);t._h=setTimeout(()=>t.classList.remove("show"),2200);}
+function markLap(i){const r=$("r"+i);if(!r)return;const d=laps[i]-plan.parts[i][1];r.textContent=fmt(laps[i]);r.className="real "+(d>15?"plus":d<-15?"minus":"good");}
+
+function buildParts(){
+  const ul=$("parts");
+  ul.innerHTML=plan.parts.length?plan.parts.map((p,i)=>`<li id="tm-p${i}"><span class="n">${i+1}</span><span>${fr(p[0])}</span><span class="plan">${fmt(p[1])}</span><span class="real" id="tm-r${i}">–</span></li>`).join("")
+    :`<li style="grid-template-columns:1fr;color:var(--muted)">${fr("Pas de plan en réglage libre : le minuteur compte seulement le temps.")}</li>`;
+  const bar=$("bar");bar.querySelectorAll(".tm-tick").forEach(t=>t.remove());
+  plan.parts.forEach((p,i)=>{if(!i)return;const t=document.createElement("div");t.className="tm-tick";t.style.left=(cum(i)/plan.pres*100)+"%";if(i%2===0)t.innerHTML=`<span>${fmt(cum(i))}</span>`;bar.appendChild(t);});
+}
+function showQ(){$("qtext").textContent=fr("« "+plan.q[qOrder[qi%qOrder.length]]+" »");}
+
+function render(){
+  const e=elapsed(),d=dur(),left=d-e,c=$("clock");
+  if(phase==="done"){c.textContent=fmt(presTotal);c.className="tm-clock";}
+  else{c.textContent=left>=0?fmt(Math.ceil(left)):fmt(left);c.className="tm-clock"+(left<0?" over":left<=30?" last":left<=120?" warn":"");}
+  $("over").classList.toggle("show",phase!=="done"&&left<0);
+  $("fill").style.width=Math.min(100,phase==="done"?100:e/d*100)+"%";
+  $("fill").style.background=left<0&&phase!=="done"?"var(--l1)":"var(--acc)";
+  if(running&&phase!=="done"){
+    if(left<=120&&left>119&&!alerted[phase+"2"]){alerted[phase+"2"]=1;beep(1,660);toast("Plus que 2 minutes");}
+    if(left<=60&&left>59&&!alerted[phase+"1"]){alerted[phase+"1"]=1;beep(2,740);toast("Plus qu'une minute");}
+    if(left<=0&&!alerted[phase+"0"]){alerted[phase+"0"]=1;beep(3,880);toast(phase==="pres"?"Les 10 minutes sont écoulées":"Fin de l'entretien");}
+  }
+  $("whereBox").style.display=(phase==="pres"&&plan.parts.length)?"":"none";
+  $("bar").querySelectorAll(".tm-tick").forEach(t=>t.style.display=phase==="pres"?"":"none");
+  if(phase!=="pres")plan.parts.forEach((_,i)=>{const li=$("p"+i);if(li)li.className=laps[i]!==undefined?"done":"";});
+  if(phase==="pres"&&plan.parts.length){
+    let exp=plan.parts.length-1;for(let i=0;i<plan.parts.length;i++){if(e<cum(i+1)){exp=i;break;}}
+    $("cur").textContent=partIdx<plan.parts.length?fr(plan.parts[partIdx][0]):"Terminé";
+    $("exp").textContent=fr(plan.parts[exp][0]);
+    const st=$("status");
+    if(!running&&e===0){st.className="tm-status";st.textContent="En attente";}
+    else if(partIdx===exp){st.className="tm-status ok";st.textContent="Dans les temps";}
+    else if(partIdx<exp){st.className="tm-status late";st.textContent=fr("En retard : accélère");}
+    else{st.className="tm-status early";st.textContent=fr("En avance : prends ton temps");}
+    if(partIdx<plan.parts.length){const r=$("r"+partIdx);if(r){const pt=e-partStart;r.textContent=fmt(pt);r.className="real"+(pt>plan.parts[partIdx][1]+15?" plus":"");}}
+    plan.parts.forEach((_,i)=>{const li=$("p"+i);if(li)li.className=i<partIdx?"done":i===partIdx?"cur":"";});
+  }
+  $("sub").textContent=fr(phase==="pres"?(running?"Présentation en cours – tu ne seras pas interrompu(e)":e>0?"En pause":"Appuie sur « Démarrer » quand tu commences à parler.")
+    :phase==="ent"?(running?"Entretien en cours – écoute, reformule, argumente":e>0?"En pause":"Appuie sur « Démarrer » pour lancer l'entretien.")
+    :"Durée de ta présentation");
+  $("start").textContent=phase==="done"?"Recommencer":running?"Pause":e>0?"Reprendre":"Démarrer";
+  $("next").disabled=!(phase==="pres"&&plan.parts.length&&partIdx<plan.parts.length&&e>0);
+  $("phase").textContent=phase==="pres"?"Passer à l'entretien":"Terminer";
+  $("phase").disabled=phase==="done"||(phase==="pres"&&e===0);
+  $("ph1").className="tm-ph "+(phase==="pres"?"on":"done");
+  $("ph2").className="tm-ph "+(phase==="ent"?"on":phase==="done"?"done":"");
+  $("ph3").className="tm-ph "+(phase==="done"?"on":"");
+  root.querySelectorAll(".tm-modes button").forEach(b=>b.disabled=(running||e>0||phase!=="pres")&&b.dataset.m!==mode);
+}
+function readFree(){PLANS.free.pres=Math.max(1,Math.min(30,+$("fPres").value||10))*60;PLANS.free.ent=Math.max(0,Math.min(30,+$("fEnt").value||0))*60;}
+function start(){
+  if(phase==="done"){reset();return;}
+  if(running){acc+=Date.now()-startAt;running=false;clearInterval(tick);}
+  else{if(mode==="free"&&phase==="pres"&&elapsed()===0)readFree();startAt=Date.now();running=true;tick=setInterval(render,200);
+    try{actx=actx||new (window.AudioContext||window.webkitAudioContext)();actx.resume&&actx.resume();}catch(e){}}
+  render();
+}
+function nextPart(){
+  if(phase!=="pres"||!plan.parts.length||partIdx>=plan.parts.length||elapsed()===0)return;
+  const e=elapsed();laps[partIdx]=e-partStart;markLap(partIdx);partIdx++;partStart=e;render();
+}
+function nextPhase(){
+  if(phase==="pres"){
+    if(elapsed()===0)return;
+    if(plan.parts.length&&partIdx<plan.parts.length){laps[partIdx]=elapsed()-partStart;markLap(partIdx);partIdx=plan.parts.length;}
+    presTotal=elapsed();clearInterval(tick);running=false;acc=0;
+    if(plan.ent>0){phase="ent";qOrder=plan.q.map((_,i)=>i).sort(()=>Math.random()-.5);qi=0;if(plan.q.length){$("q").classList.add("show");showQ();}beep(1,600);}
+    else finish();
+  }else if(phase==="ent"){entTotal=elapsed();clearInterval(tick);running=false;acc=0;finish();}
+  render();
+}
+function finish(){phase="done";$("toast").classList.remove("show");$("q").classList.remove("show");saveHist();buildBilan();$("bilan").classList.add("show");
+  if(!root.classList.contains("fs"))$("bilan").scrollIntoView({behavior:"smooth",block:"start"});}
+function reset(){clearInterval(tick);running=false;acc=0;phase="pres";partIdx=0;partStart=0;laps=[];presTotal=0;entTotal=0;alerted={};
+  $("q").classList.remove("show");$("bilan").classList.remove("show");if(mode==="free")readFree();buildParts();render();}
+function setMode(m){
+  if(running||elapsed()>0||phase!=="pres")return;
+  mode=m;plan=PLANS[m];root.classList.remove("m-s1","m-s2","m-free");root.classList.add("m-"+m);
+  root.querySelectorAll(".tm-modes button").forEach(b=>b.classList.toggle("on",b.dataset.m===m));
+  $("partsTitle").textContent=m==="free"?"Le plan":fr("Le plan conseillé – "+plan.name);reset();
+}
+function buildBilan(){
+  const P=plan.pres,diff=presTotal-P;let v,cls;
+  if(Math.abs(diff)<=30){v="Présentation dans les temps : "+fmt(presTotal)+" pour "+fmt(P)+" prévues.";cls="ok";}
+  else if(diff>30){v="Présentation trop longue de "+fmt(diff).replace("+","")+". Le jury peut t'arrêter avant la fin.";cls="bad";}
+  else if(presTotal<P*0.7){v="Présentation trop courte ("+fmt(presTotal)+"). Développe tes exemples et tes chiffres.";cls="bad";}
+  else{v="Présentation un peu courte ("+fmt(presTotal)+"). Tu as de la marge pour détailler.";cls="mid";}
+  $("verdict").innerHTML=`<div class="tm-verdict ${cls}">${fr(v)}</div>`+(entTotal?`<p style="margin:0 0 6px">${fr("Entretien : "+fmt(entTotal))}</p>`:"");
+  const tb=$("bilanBody"),table=$("bilan").querySelector("table");
+  if(!plan.parts.length){tb.innerHTML="";table.style.display="none";$("conseils").innerHTML="";return;}
+  table.style.display="";
+  tb.innerHTML=plan.parts.map((p,i)=>{
+    if(laps[i]===undefined)return `<tr><td>${fr(p[0])}</td><td class="num">${fmt(p[1])}</td><td class="num">–</td><td class="num" style="color:var(--l1)">${fr("non présentée")}</td></tr>`;
+    const d=laps[i]-p[1],c=Math.abs(d)<=15?"var(--l4)":d>0?"var(--l1)":"#9a6200";
+    return `<tr><td>${fr(p[0])}</td><td class="num">${fmt(p[1])}</td><td class="num">${fmt(laps[i])}</td><td class="num" style="color:${c}">${d>=0?"+":"−"}${fmt(Math.abs(d))}</td></tr>`;}).join("")+
+    `<tr><td><b>Total</b></td><td class="num"><b>${fmt(P)}</b></td><td class="num"><b>${fmt(presTotal)}</b></td><td class="num"><b>${diff>=0?"+":"−"}${fmt(Math.abs(diff))}</b></td></tr>`;
+  const miss=plan.parts.filter((p,i)=>laps[i]===undefined).map(p=>p[0]);
+  const tops=plan.parts.map((p,i)=>({n:p[0],d:laps[i]===undefined?0:laps[i]-p[1]}));
+  const longs=tops.filter(x=>x.d>20).sort((a,b)=>b.d-a.d).slice(0,2),shorts=tops.filter(x=>x.d<-20).sort((a,b)=>a.d-b.d).slice(0,2);
+  let h="";
+  if(miss.length)h+=`<p>${fr("Parties non présentées : "+miss.join(", ")+". Pense à appuyer sur « Partie suivante » à chaque changement, ou garde du temps pour elles.")}</p>`;
+  if(longs.length)h+=`<p>${fr("À raccourcir : "+longs.map(x=>x.n+" (+"+fmt(x.d)+")").join(", ")+".")}</p>`;
+  if(shorts.length)h+=`<p>${fr("À développer : "+shorts.map(x=>x.n+" (−"+fmt(-x.d)+")").join(", ")+".")}</p>`;
+  $("conseils").innerHTML=h||`<p>${fr("Toutes tes parties sont proches du temps prévu.")}</p>`;
+}
+function bilanText(){
+  let t=fr(`E33 – ${plan.name} – passage du ${new Date().toLocaleDateString("fr-FR")}\nPrésentation : ${fmt(presTotal)} (prévu ${fmt(plan.pres)})`);
+  if(entTotal)t+=fr(`\nEntretien : ${fmt(entTotal)}`);
+  plan.parts.forEach((p,i)=>{t+=fr(`\n- ${p[0]} : ${laps[i]===undefined?"non présentée":fmt(laps[i])} (prévu ${fmt(p[1])})`);});
+  return t;
+}
+$("copy").onclick=()=>{try{navigator.clipboard.writeText(bilanText()).then(()=>toast("Bilan copié"),()=>toast("Copie impossible sur cet appareil"));}catch(e){toast("Copie impossible sur cet appareil");}};
+let hist=[];try{hist=JSON.parse(localStorage.getItem("e33-timer-hist")||"[]");}catch(e){hist=[];}
+function saveHist(){hist.unshift({d:Date.now(),m:plan.name,p:Math.round(presTotal),t:plan.pres});hist=hist.slice(0,10);try{localStorage.setItem("e33-timer-hist",JSON.stringify(hist));}catch(e){}drawHist();}
+function drawHist(){
+  const ul=$("hist");
+  if(!hist.length){ul.innerHTML=`<li style="color:var(--muted)">${fr("Aucun passage pour l'instant.")}</li>`;return;}
+  ul.innerHTML=hist.map(h=>{const d=new Date(h.d),c=Math.abs(h.p-h.t)<=30?"var(--l4)":"var(--l1)";
+    return `<li><span>${d.toLocaleDateString("fr-FR",{day:"2-digit",month:"2-digit"})} ${d.toLocaleTimeString("fr-FR",{hour:"2-digit",minute:"2-digit"})} · ${h.m}</span><b style="color:${c}">${fmt(h.p)}</b></li>`;}).join("");
+}
+$("clearHist").onclick=()=>$("confHist").classList.add("show");
+$("noHist").onclick=()=>$("confHist").classList.remove("show");
+$("yesHist").onclick=()=>{hist=[];try{localStorage.removeItem("e33-timer-hist");}catch(e){}drawHist();$("confHist").classList.remove("show");};
+function toggleFs(){
+  const on=!root.classList.contains("fs");root.classList.toggle("fs",on);$("fs").textContent=on?"Quitter le plein écran":"Plein écran";
+  try{if(on&&root.requestFullscreen)root.requestFullscreen().catch(()=>{});else if(!on&&document.fullscreenElement)document.exitFullscreen().catch(()=>{});}catch(e){}
+}
+document.addEventListener("fullscreenchange",()=>{if(!document.fullscreenElement&&root.classList.contains("fs")){root.classList.remove("fs");$("fs").textContent="Plein écran";}});
+$("start").onclick=start;$("next").onclick=nextPart;$("phase").onclick=nextPhase;$("reset").onclick=reset;$("fs").onclick=toggleFs;
+$("sound").onclick=()=>{sound=!sound;$("sound").textContent=fr(sound?"Son : activé":"Son : coupé");if(sound)beep(1,700);};
+$("qnext").onclick=()=>{qi++;showQ();};
+root.querySelectorAll(".tm-modes button").forEach(b=>b.onclick=()=>setMode(b.dataset.m));
+$("fPres").onchange=$("fEnt").onchange=()=>{if(!running&&elapsed()===0){readFree();render();}};
+function inView(){if(root.classList.contains("fs"))return true;const r=root.getBoundingClientRect();return r.top<innerHeight*0.6&&r.bottom>innerHeight*0.3;}
+document.addEventListener("keydown",ev=>{
+  if(/INPUT|BUTTON|SUMMARY|LABEL|TEXTAREA|SELECT/.test(ev.target.tagName)||!inView())return;
+  if(ev.code==="Space"){ev.preventDefault();start();}
+  else if(ev.key==="ArrowRight"){ev.preventDefault();nextPart();}
+  else if(ev.key==="e"||ev.key==="E")nextPhase();
+  else if(ev.key==="r"||ev.key==="R")reset();
+  else if(ev.key==="Escape"&&root.classList.contains("fs"))toggleFs();
+});
+buildParts();drawHist();render();
+})();
+
+/* ---------- check-list ---------- */
+const CL={
+ c1:[
+  ["Sources",[
+   "J'utilise au moins deux sources internes (SIC, tuteur, documents).",
+   "J'utilise au moins deux sources externes (avis, concurrents, études).",
+   "Chaque chiffre a une source et une date.",
+   "J'ai des données chiffrées et des données qualitatives.",
+   "Je sais dire à qui j'ai transmis les informations."]],
+  ["Sollicitations clients",[
+   "Je présente au moins deux situations réelles.",
+   "Pour chacune : demande, réponse, résultat.",
+   "J'explique en quoi ma réponse fidélise.",
+   "Je donne mon avis sur ma pratique."]],
+  ["Actions proposées",[
+   "Je propose deux actions différentes.",
+   "Chaque action répond à un constat de mon analyse.",
+   "Chaque action a un objectif chiffré.",
+   "J'ai vérifié la faisabilité avec mon tuteur (coût, date, moyens).",
+   "Je fais le lien avec la stratégie de l'enseigne."]],
+  ["Communication",[
+   "Mon support numérique est terminé et fonctionne.",
+   "Mes diapos contiennent peu de texte.",
+   "Je tiens en 10 minutes sans lire."]]
+ ],
+ c2:[
+  ["Contribuer",[
+   "Je rappelle la feuille de route et l'objectif.",
+   "J'explique le choix des outils selon le profil client.",
+   "Je montre comment les outils se complètent.",
+   "Je présente un planning de l'action.",
+   "Je dis clairement ce que j'ai fait, moi, à chaque étape.",
+   "Je présente mes ventes au rebond avec des chiffres.",
+   "J'explique quelles données j'ai ajoutées au SIC et à qui je les ai transmises."]],
+  ["Évaluer",[
+   "Je compare l'objectif et le réalisé (taux d'atteinte).",
+   "J'utilise des indicateurs chiffrés et qualitatifs.",
+   "Je présente les difficultés et comment je les ai surmontées.",
+   "Je fais un bilan personnel (ce que j'ai appris).",
+   "Je propose une amélioration pour chaque point faible.",
+   "Mes améliorations respectent la stratégie de l'enseigne."]],
+  ["Communication",[
+   "Mon support numérique est terminé et fonctionne.",
+   "Je tiens en 10 minutes sans lire."]]
+ ]
+};
+let cur="c1",state={};
+try{state=JSON.parse(localStorage.getItem("e33-check")||"{}");}catch(e){state={};}
+function save(){try{localStorage.setItem("e33-check",JSON.stringify(state));}catch(e){}}
+function drawChecks(){
+  const ul=document.getElementById("checks");let html="",n=0;
+  CL[cur].forEach(g=>{html+=`<li class="grp">${g[0]}</li>`;g[1].forEach(t=>{const k=cur+"-"+n++;html+=`<li><label><input type="checkbox" data-k="${k}" ${state[k]?"checked":""}><span>${t}</span></label></li>`;});});
+  ul.innerHTML=html;ul.querySelectorAll("input").forEach(i=>i.onchange=()=>{state[i.dataset.k]=i.checked;save();pct();});pct();
+}
+function pct(){
+  const all=document.querySelectorAll("#checks input"),ok=[...all].filter(i=>i.checked).length,p=all.length?Math.round(ok/all.length*100):0;
+  document.getElementById("pctTxt").textContent=p+" %";
+  const b=document.getElementById("pctBar");b.style.width=p+"%";b.style.background=cur==="c1"?"var(--s1)":"var(--s2)";
+}
+document.querySelectorAll(".tabs button").forEach(b=>b.onclick=()=>{document.querySelectorAll(".tabs button").forEach(x=>x.classList.remove("on"));b.classList.add("on");cur=b.dataset.tab;document.getElementById("confirm").classList.remove("show");drawChecks();});
+document.getElementById("clearBtn").onclick=()=>document.getElementById("confirm").classList.add("show");
+document.getElementById("noClear").onclick=()=>document.getElementById("confirm").classList.remove("show");
+document.getElementById("yesClear").onclick=()=>{Object.keys(state).forEach(k=>{if(k.startsWith(cur+"-"))delete state[k];});save();drawChecks();document.getElementById("confirm").classList.remove("show");};
+drawChecks();
+</script>
+</body>
+</html>
