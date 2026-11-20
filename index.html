@@ -679,7 +679,7 @@ function render(id,arr,cls,start){
         <div class="example"><h4>Exemple dans un magasin de sport</h4>${c.ex.length>1?list(c.ex):"<p>"+c.ex[0]+"</p>"}</div>
         <div class="jury"><h4>Le jury peut te demander</h4>${list(c.jury)}</div>
       </div>
-      <div class="avoid blk"><h4>À éviter</h4>${list(c.avoid)}</div>
+      <div class="avoid blk"><h4>À ne pas faire</h4>${list(c.avoid)}</div>
       <div class="lvtitle">Les 4 niveaux pour ce critère</div>
       <div class="levels4">${c.lv.map((d,k)=>`<div class="lv l${k+1}"><div class="n">${LVN[k]}</div><p>${d}</p></div>`).join("")}</div>
     </div>
